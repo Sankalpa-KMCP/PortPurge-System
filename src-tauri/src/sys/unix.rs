@@ -197,13 +197,14 @@ pub(crate) fn parse_lsof_line(line: &str) -> Option<PortInfo> {
     let _device = parts.next()?;
     let _size = parts.next()?;
     let protocol = Protocol::parse_known(parts.next()?)?;
-    let name_col = parts.next()?;
+    let addr_port = parts.next()?;
 
-    if matches!(protocol, Protocol::Tcp) && !name_col.contains("(LISTEN)") {
-        return None;
+    if matches!(protocol, Protocol::Tcp) {
+        let remaining = parts.collect::<Vec<_>>().join(" ");
+        if !remaining.contains("LISTEN") && !addr_port.contains("LISTEN") {
+            return None;
+        }
     }
-
-    let addr_port = name_col.split_whitespace().next().unwrap_or(name_col);
     let host = host_from_addr_port(addr_port)?;
     if !is_localhost_address(host) {
         return None;
