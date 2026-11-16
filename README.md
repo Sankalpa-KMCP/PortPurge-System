@@ -25,9 +25,13 @@ Pre-compiled binary packages are available directly from the [Releases](https://
 
 | Platform | Format | Description |
 |---|---|---|
-| **Windows** | `.exe` | Standard NSIS Setup installer (`PortPurge_x.x.x_x64-setup.exe`) |
-| **Windows** | `.msi` | Enterprise-compatible Windows Installer package (`PortPurge_x.x.x_x64_en-US.msi`) |
-| **All Platforms** | Source | Clone and build locally using Cargo and Node.js |
+| **Windows** | `.exe` | Standard NSIS Setup installer (`PortPurge_0.6.0_x64-setup.exe`) |
+| **Windows** | `.msi` | Windows Installer package (`PortPurge_0.6.0_x64_en-US.msi`) |
+| **macOS** | `.dmg` | Apple Silicon disk image installer (`PortPurge_0.6.0_aarch64.dmg`) |
+| **macOS** | `.tar.gz` | Portable application bundle (`PortPurge_aarch64.app.tar.gz`) |
+| **Linux** | `.AppImage` | Universal standalone Linux executable (`PortPurge_0.6.0_amd64.AppImage`) |
+| **Linux** | `.deb` | Debian / Ubuntu package installer (`PortPurge_0.6.0_amd64.deb`) |
+| **Linux** | `.rpm` | Red Hat / Fedora package installer (`PortPurge-0.6.0-1.x86_64.rpm`) |
 
 ### In-App Auto-Updates
 
